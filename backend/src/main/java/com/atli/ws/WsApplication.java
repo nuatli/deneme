@@ -1,17 +1,9 @@
 package com.atli.ws;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
-
-import com.atli.ws.hoax.HoaxService;
-import com.atli.ws.hoax.vm.HoaxSubmitVM;
-import com.atli.ws.user.User;
-import com.atli.ws.user.UserService;
 
 @SpringBootApplication
 @EnableAutoConfiguration
@@ -27,7 +19,7 @@ public class WsApplication {
 		System.out.println("********************* Bean Name End *********************");
 		
 	}
-	
+	/*
 	@Bean//Spring ile iliski kurduk, Uyguluama ayağı takltığı zaman çalışıyor.
 	@Profile("!production")
 	CommandLineRunner createInitialUsers(UserService userService,HoaxService hoaxService){
@@ -54,5 +46,6 @@ public class WsApplication {
 			
 		};
 	}
+	*/
 
 }

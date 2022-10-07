@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.atli</groupId>
-	<artifactId>ws</artifactId>
+	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hoak-backend</name>
 	<description>Hoak Backend Spring Boot</description>
