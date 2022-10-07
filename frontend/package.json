@@ -1,0 +1,55 @@
+{
+  "name": "hoak-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.25.0",
+    "body-parser": "1.18.2",
+    "bootstrap": "4.4.1",
+    "express": "4.16.3",
+    "i18": "latest",
+    "i18next": "^21.6.10",
+    "net": "1.0.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "node-sass": "^7.0.1",
+    "querystring-es3": "^0.2.1",
+    "react": "16.10.0",
+    "react-dom": "16.10.0",
+    "react-i18next": "^11.15.3",
+    "react-number-format": "3.0.2",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "^5.0.0",
+    "react-test-renderer": "latest",
+    "redux": "^4.0.0",
+    "redux-thunk": "2.2.0",
+    "secure-ls": "^1.2.6",
+    "sockjs-client": "1.1.5",
+    "stompjs": "2.3.3",
+    "timeago": "^1.6.7",
+    "timeago-react": "^3.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:ci": "react-scripts test --testResultsProcessor ./node_modules/jest-junit",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://10.152.16.142:8786"
+}
