@@ -60,8 +60,8 @@ jobs:
         run: mvn -B package --file pom.xml
         working-directory: ./backend
       
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        name: SFTP Deploy
         with: 
           username: ${{secrets.USERNAME}}
           server: ${{secrets.IP}}
