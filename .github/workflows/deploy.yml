@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: Deploy Frontend | Backend
 
 # Controls when the workflow will run
@@ -13,17 +12,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
+      
       - name: Use Node.js 17.x
         uses: actions/setup-node@v3.5.0
         with:
@@ -34,8 +27,7 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           cache: maven
-                   
-      
+               
       - name: npm install 
         run: |
           if [ -e yarn.lock ]; then
@@ -68,8 +60,9 @@ jobs:
           #ssh_private_key: ${{secrets.SSH}}
           #local_path: ./backend/target/backend-0.0.1-SNAPSHOT.jar
           #remote_path: /home/nazimutkuatli/
-          
-          
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
       - name: SFTP Push
         # You may pin to the exact commit or the version.
         # uses: datanomi/SFTP-Push@856acb306cfa4d21ef922e5d5d1ffd03f401e92a
