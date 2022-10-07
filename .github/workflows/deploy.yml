@@ -60,11 +60,11 @@ jobs:
         run: mvn -B package --file pom.xml
         working-directory: ./backend
       
-      - name: FTP/SFTP file deployer
-        uses: milanmk/actions-file-deployer@1.11
-        with:
-          remote-user: ${{secrets.USERNAME}} 
-          ssh-private-key: ${{secrets.SSH}} 
-          proxy: ${{secrets.IP}} 
-          local_path: backend/target/backend-0.0.1-SNAPSHOT.jar
-          remote_path: /home/nazimutkuatli
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with: 
+          username: ${{secrets.USERNAME}}
+          server: ${{secrets.IP}}
+          ssh_private_key: ${{secrets.SSH}}
+          local_path: backend/target/backend-0.0.1-SNAPSHOT.har
+          remote_path: /home/nazimutkuatli/
