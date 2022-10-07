@@ -60,11 +60,29 @@ jobs:
         run: mvn -B package --file pom.xml
         working-directory: ./backend
       
-      - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        name: SFTP Deploy
-        with: 
+      #- uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+       # name: SFTP Deploy
+       # with: 
+        #  username: ${{secrets.USERNAME}}
+         # server: ${{secrets.IP}}
+          #ssh_private_key: ${{secrets.SSH}}
+          #local_path: ./backend/target/backend-0.0.1-SNAPSHOT.jar
+          #remote_path: /home/nazimutkuatli/
+          
+          
+      - name: SFTP Push
+        # You may pin to the exact commit or the version.
+        # uses: datanomi/SFTP-Push@856acb306cfa4d21ef922e5d5d1ffd03f401e92a
+        uses: datanomi/SFTP-Push@v.1.2.2.1h
+        with:
+          # username
           username: ${{secrets.USERNAME}}
+          # your sftp server
           server: ${{secrets.IP}}
+          # your sftp server port, default to 22
           ssh_private_key: ${{secrets.SSH}}
-          local_path: backend/target/backend-0.0.1-SNAPSHOT.har
+          # will put all file under this path
+          local_path: ./backend/target/backend-0.0.1-SNAPSHOT.jar
+          # files will copy to under remote_path
           remote_path: /home/nazimutkuatli/
+
