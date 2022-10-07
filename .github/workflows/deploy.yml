@@ -50,7 +50,21 @@ jobs:
       - name: frontend build
         run: npm run build --if-present
         working-directory: ./frontend
+        
+      - name: copy react to spring static resources
+      - run: |
+          mkdir -p hoak-backend/src/main/resources/static
+          cp -a frontend/build/. hoak-backend/src/main/resources/static/
       
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         working-directory: ./backend
+      
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{secrets.USERNAME}} 
+          server: ${{secrets.IP}} 
+          ssh_private_key: ${{secrets.SSH}} 
+          local_path: backend/target/backend-0.0.1-SNAPSHOT.jar
+          remote_path: /home/nazimutkuatli
